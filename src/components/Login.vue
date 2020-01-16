@@ -3,32 +3,32 @@
     <div class="login_box">
       <!-- 头像部分 -->
       <div class="avatar_box">
-        <img src="../assets/logo.png"
-             alt="">
+        <img src="../assets/logo.png" alt />
       </div>
       <!-- 表单部分 -->
-      <el-form ref="loginFormRef"
-               :model="loginForm"
-               :rules="loginFormRules"
-               label-width="0px"
-               class="login_form">
+      <el-form
+        ref="loginFormRef"
+        :model="loginForm"
+        :rules="loginFormRules"
+        label-width="0px"
+        class="login_form"
+      >
         <!-- 用户 -->
         <el-form-item prop="username">
-          <el-input v-model="loginForm.username"
-                    prefix-icon="iconfont icon-user"></el-input>
+          <el-input v-model="loginForm.username" prefix-icon="iconfont icon-user"></el-input>
         </el-form-item>
         <!-- 密码 -->
         <el-form-item prop="password">
-          <el-input v-model="loginForm.password"
-                    prefix-icon="iconfont icon-3702mima"
-                    type="password"></el-input>
+          <el-input
+            v-model="loginForm.password"
+            prefix-icon="iconfont icon-3702mima"
+            type="password"
+          ></el-input>
         </el-form-item>
         <!-- 按钮 -->
         <el-form-item class="btns">
-          <el-button @click="login"
-                     type="primary">登录 </el-button>
-          <el-button type="info"
-                     @click="loginFormReset">重置</el-button>
+          <el-button @click="login" type="primary">登录</el-button>
+          <el-button type="info" @click="loginFormReset">重置</el-button>
         </el-form-item>
       </el-form>
     </div>
@@ -36,11 +36,11 @@
 </template>
 <script>
 export default {
-  data () {
+  data() {
     return {
       // 表单绑定数据对象
       loginForm: {
-        username: 'alon',
+        username: 'admin',
         password: '123456'
       },
       // 表单规则验证对象
@@ -58,11 +58,11 @@ export default {
   },
   methods: {
     // 重置按钮事件
-    loginFormReset () {
+    loginFormReset() {
       this.$refs.loginFormRef.resetFields()
     },
     // 登录按钮事件 登录处理
-    login () {
+    login() {
       this.$refs.loginFormRef.validate(async valid => {
         // eslint-disable-next-line no-useless-return
         if (!valid) return
